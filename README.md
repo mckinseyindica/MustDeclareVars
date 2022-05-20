@@ -1,0 +1,2 @@
+# MustDeclareVars
+AutoItSetOption("MustDeclareVars", True)  Local $path = "C:\Program Files (x86)\something"  ConsoleWrite(FindExactOrClosestPatialMatch($path) &amp; @CRLF)  Func FindExactOrClosestPatialMatch($path)    While True       If FileExists($path) Then Return $path       $path = StringRegExpReplace($path, "^(.*[\\/]).*?$", "$1")       If @extended == 0 Then Return SetError(1, 0, Null)    WEnd EndFunc
